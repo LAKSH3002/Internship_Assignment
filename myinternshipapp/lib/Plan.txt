@@ -1,0 +1,24 @@
+The following is the plan to create the entire application
+
+FrontEnd
+
+1st page - Creating the welcome screen using Flutter animation
+
+2nd page - Creating a Register/Signup page for the user
+         - In the same page, Having a login button
+         - Connecting the page with the database
+         - Proper validations for the user
+
+3rd page - Developing the login page of the application
+         - Validation for logging in
+
+4th page - Home page
+         - Fetch API details and display on the screeen in the form of list or grid
+
+5th page - Further details of the Block chosen by the user on the Home screen
+
+6th Page - Audio builder and player on the screen
+
+Backend
+- Firebase authentication for both android and Ios
+- Audio storage
