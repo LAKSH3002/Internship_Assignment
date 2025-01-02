@@ -66,9 +66,16 @@ class _AudioplayerState extends State<Audioplayer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Audio Player', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.red,
         centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+        title: Text(
+          'Audio Screen',
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        backgroundColor: Colors.red,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
