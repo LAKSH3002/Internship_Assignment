@@ -233,60 +233,38 @@ class _SignupState extends State<Signup> {
                     },
                   ),
                 SizedBox(height: 10),
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 60,
+                Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        foregroundColor: Color.fromARGB(255, 230, 223, 218),
+                        backgroundColor: Colors.red),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        // Process the data
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: Text('Form Submitted'),
+                            content: Text('All data is valid!'),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            const Homescreen())),
+                                child: Text('OK'),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+                    },
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          foregroundColor: Color.fromARGB(255, 230, 223, 218),
-                          backgroundColor: Colors.red),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          // Process the data
-                          showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                              title: Text('Form Submitted'),
-                              content: Text('All data is valid!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () => Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              const Homescreen())),
-                                  child: Text('OK'),
-                                ),
-                              ],
-                            ),
-                          );
-                        }
-                      },
-                      child: Text(
-                        'Submit',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            foregroundColor: Color.fromARGB(255, 230, 223, 218),
-                            backgroundColor: Colors.red),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const Homescreen()));
-                        },
-                        child: const Text(
-                          'SKIP',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ))
-                  ],
+                  ),
                 ),
               ],
             ),

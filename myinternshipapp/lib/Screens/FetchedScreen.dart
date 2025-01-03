@@ -53,7 +53,7 @@ class _FetchedScreenState extends State<FetchedScreen> {
     return Scaffold(
       // Appbar
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 247, 169, 97),
+        backgroundColor: Color.fromARGB(255, 219, 106, 106),
         centerTitle: true,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -317,8 +317,8 @@ class BlogTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => Signup()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Signup()));
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
