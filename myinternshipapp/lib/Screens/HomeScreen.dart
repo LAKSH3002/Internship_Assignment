@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myinternshipapp/Screens/Audioplayer.dart';
 import 'package:myinternshipapp/Screens/FetchedScreen.dart';
+import 'package:myinternshipapp/Screens/newaudioplayer.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -12,7 +13,11 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [const FetchedScreen(), AudioPlayerScreen()];
+  final List<Widget> _pages = [
+    const FetchedScreen(),
+    AudioPlayerScreen(),
+    NewAudioPlayerScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +38,10 @@ class _HomescreenState extends State<Homescreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.music_note),
             label: 'Audio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.music_note_rounded),
+            label: 'Audio page2',
           ),
         ],
       ),

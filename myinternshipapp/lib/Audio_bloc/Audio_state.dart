@@ -1,10 +1,7 @@
-// Audio Player States
+// Audio Player State
 abstract class AudioPlayerState {}
 
-class AudioInitial extends AudioPlayerState {}
-
-class AudioPlaying extends AudioPlayerState {}
-
-class AudioPaused extends AudioPlayerState {}
-
-class AudioStopped extends AudioPlayerState {}
+class AudioPlayerInitial extends AudioPlayerState {}
+class AudioPlayerPlaying extends AudioPlayerState {}
+class AudioPlayerPaused extends AudioPlayerState {}
+class AudioPlayerStopped extends AudioPlayerState {}

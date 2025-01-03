@@ -12,50 +12,39 @@ class AudioPlayerScreen extends StatefulWidget {
 class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   @override
   Widget build(BuildContext context) {
-    final audioBloc = BlocProvider.of<AudioPlayerBloc>(context);
+    final audioBloc = context.read<AudioPlayerBloc>();
 
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.white
-        ),
-        title: Text('Audio Player', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.red,
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text('Audio Player')),
       body: Center(
         child: BlocBuilder<AudioPlayerBloc, AudioPlayerState>(
           builder: (context, state) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  state is AudioPlaying
-                      ? 'Audio is Playing'
-                      : state is AudioPaused
-                          ? 'Audio is Paused'
-                          : state is AudioStopped
-                              ? 'Audio is Stopped'
-                              : 'Press Play to Start Audio',
-                  style: TextStyle(fontSize: 18),
-                ),
+                if (state is AudioPlayerInitial || state is AudioPlayerStopped)
+                  Text('Audio Stopped'),
+                if (state is AudioPlayerPlaying)
+                  Text('Audio Playing'),
+                if (state is AudioPlayerPaused)
+                  Text('Audio Paused'),
                 SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       onPressed: () => audioBloc.add(PlayAudio()),
-                      child: const Text('Play'),
+                      child: Text('Play'),
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10),
                     ElevatedButton(
                       onPressed: () => audioBloc.add(PauseAudio()),
-                      child: const Text('Pause'),
+                      child: Text('Pause'),
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10),
                     ElevatedButton(
                       onPressed: () => audioBloc.add(StopAudio()),
-                      child: const Text('Stop'),
+                      child: Text('Stop'),
                     ),
                   ],
                 ),
