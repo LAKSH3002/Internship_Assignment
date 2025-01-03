@@ -8,9 +8,11 @@ class AudioPlayerBloc extends Bloc<AudioPlayerEvent, AudioPlayerState> {
 
   AudioPlayerBloc() : super(AudioPlayerInitial()) {
     on<PlayAudio>((event, emit) async {
-      await _audioPlayer.play(AssetSource(
-          'assets/audio/Aaron Hibell - Oppenheimer (Trance Extended Mix).mp3'));
-      emit(AudioPlayerPlaying());
+      try {
+        await _audioPlayer.play(AssetSource('assets/audio/audio.mp3'));
+      } catch (e) {
+        print('Error playing audio: $e');
+      }
     });
 
     on<PauseAudio>((event, emit) async {

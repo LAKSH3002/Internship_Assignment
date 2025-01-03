@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myinternshipapp/Audio_bloc/Audio_bloc.dart';
+import 'package:myinternshipapp/Screens/Audioplayer.dart';
 import 'package:myinternshipapp/Screens/welcomescreen.dart';
 
 void main() {
