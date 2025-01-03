@@ -12,7 +12,7 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [Fetchedscreen(), Audioplayer()];
+  final List<Widget> _pages = [const FetchedScreen(), AudioPlayerScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +28,11 @@ class _HomescreenState extends State<Homescreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'News Page',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.music_note),
-            label: 'Search',
+            label: 'Audio',
           ),
         ],
       ),

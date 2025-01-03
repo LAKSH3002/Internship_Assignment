@@ -16,6 +16,7 @@ class _SignupState extends State<Signup> {
   String? _gender;
   String? _country;
   String? _state;
+  // ignore: unused_field
   String? _city;
 
   final List<String> genders = ['Male', 'Female', 'Other'];
@@ -49,7 +50,9 @@ class _SignupState extends State<Signup> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 const Padding(
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                   child: const Text(
@@ -93,8 +96,7 @@ class _SignupState extends State<Signup> {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
                     }
-                    if (!RegExp(
-                            r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\$')
+                    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
                         .hasMatch(value)) {
                       return 'Please enter a valid email address';
                     }
@@ -118,7 +120,7 @@ class _SignupState extends State<Signup> {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your phone number';
                     }
-                    if (!RegExp(r'^\d{10}\$').hasMatch(value)) {
+                    if (!RegExp('').hasMatch(value)) {
                       return 'Please enter a valid 10-digit phone number';
                     }
                     return null;
